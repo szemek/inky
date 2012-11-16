@@ -8,7 +8,8 @@ Note.all = function(){
   collection = [];
 
   for(key in storage){
-    note = new Note(key, storage[key]);
+    item = JSON.parse(storage[key]);
+    note = new Note(item['header'], item['content']);
     collection.push(note)
   }
 
