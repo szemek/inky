@@ -2,21 +2,18 @@
 <head><title>Scribble</title></head>
 <script src="js/jquery.js"></script>
 <script src="js/knockout.js"></script>
+<script src="js/notes.js"></script>
 
 <link rel="stylesheet" href="css/reset.css" type="text/css" />
 <link rel="stylesheet" href="css/inky.css" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <body>
 
-<div id="boxes">
-  <div class="box">
-    <a href="#">Header</a>
-    <p>Tutaj będzie jakaś krótka notatka.</p>
+<div id="notes" data-bind="foreach: notes">
+  <div class="note">
+    <a href="#" data-bind="text: header"></a>
+    <p data-bind="text: content"></p>
   </div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
 </div>
 
 </body>
