@@ -1,0 +1,16 @@
+{
+  "name": "Inky",
+  "version": "0.1",
+  "permissions": ["tabs", "notifications", "http://*/*"],
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "images/inky.png",
+    "default_title": "Inky"
+  },
+  "icons": {
+    "128": "images/inky.png"
+   },
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
