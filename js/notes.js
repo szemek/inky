@@ -17,8 +17,8 @@ Note.all = function(){
 }
 
 $(document).ready(function(){
-  $('.note').on('click', function(){
-    $('.note [contenteditable=true]').removeAttr('contenteditable');
+  $('.note').on('click', 'h1, p', function(){
+    $('[contenteditable=true]').removeAttr('contenteditable');
     $(this).attr('contenteditable', 'true');
   });
 });
