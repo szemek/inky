@@ -3,6 +3,18 @@ var Note = function(header, content){
   this.content = content;
 }
 
+Note.all = function(){
+  var storage = window['localStorage'];
+  collection = [];
+
+  for(key in storage){
+    note = new Note(key, storage[key]);
+    collection.push(note)
+  }
+
+  return collection;
+}
+
 $(document).ready(function(){
   $('.note').on('click', function(){
     $('.note [contenteditable=true]').removeAttr('contenteditable');
