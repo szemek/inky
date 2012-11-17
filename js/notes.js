@@ -33,12 +33,12 @@ Note.render = function(collection){
 }
 
 $(document).ready(function(){
-  $('.note').on('click', 'h1, p', function(){
+  $('#notes').on('click', '.note h1, .note p', function(){
     $('[contenteditable=true]').removeAttr('contenteditable');
     $(this).attr('contenteditable', 'true');
   });
 
-  $('.note button').on('click', function(){
+  $('#notes').on('click', '.note button', function(){
     note_element = $(this).parent();
     id = note_element.attr('data-id');
     header = note_element.find('h1').text();
@@ -46,4 +46,6 @@ $(document).ready(function(){
     note = new Note(id, header, content);
     note.save();
   });
+
+  Note.render(Note.all());
 });
