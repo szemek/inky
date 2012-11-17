@@ -22,6 +22,16 @@ Note.all = function(){
   return collection;
 }
 
+Note.render = function(collection){
+  collection.forEach(function(note){
+    template = $('#template').html();
+    note_element = template.replace('{{ data-id }}', note['id']);
+    note_element = note_element.replace('{{ header }}', note['header']);
+    note_element = note_element.replace('{{ content }}', note['content']);
+    $('#notes').append(note_element);
+  });
+}
+
 $(document).ready(function(){
   $('.note').on('click', 'h1, p', function(){
     $('[contenteditable=true]').removeAttr('contenteditable');
