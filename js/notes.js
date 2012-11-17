@@ -32,6 +32,14 @@ Note.render = function(collection){
   });
 }
 
+Note.add = function(){
+  id = new Date().getTime();
+  header = "[Nowa notatka]";
+  content = "...";
+  note = new Note(id, header, content);
+  Note.render([note]);
+}
+
 $(document).ready(function(){
   $('#notes').on('click', '.note h1, .note p', function(){
     $('[contenteditable=true]').removeAttr('contenteditable');
