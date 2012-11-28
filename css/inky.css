@@ -28,6 +28,7 @@ body {
   width: 180px;
   border: 1px solid black;
   position: relative;
+  display: inline-block;
 }
 
 .note .header {
