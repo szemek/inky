@@ -55,5 +55,9 @@ $(document).ready(function(){
     note.save();
   });
 
+  $('#add-note').on('click', function(){
+    Note.add({});
+  });
+
   Note.render(Note.all());
 });
